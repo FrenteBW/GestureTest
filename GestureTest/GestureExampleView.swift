@@ -18,23 +18,22 @@ struct GestureExampleView: View {
         VStack {
             // Tap Gesture
             Circle()
-                .fill(tapped ? Color.red : Color.blue)
+                .fill(tapped ? Color.cyan : Color.blue)
                 .frame(width: 100, height: 100)
                 .onTapGesture {
                     self.tapped.toggle()
                 }
-
-            // Long Press Gesture
+                
+                // Long Press Gesture
             Circle()
-                .fill(longPressed ? Color.green : Color.yellow)
+                .fill(longPressed ? Color.orange : Color.yellow)
                 .frame(width: 100, height: 100)
                 .onLongPressGesture(minimumDuration: 1.0) {
                     self.longPressed.toggle()
                 }
-
             // Drag Gesture
             Circle()
-                .fill(Color.orange)
+                .fill(Color.red)
                 .frame(width: 100, height: 100)
                 .offset(dragOffset)
                 .gesture(
@@ -48,7 +47,7 @@ struct GestureExampleView: View {
                 )
 
             // Magnification Gesture
-            Image(systemName: "arrow.up.circle")
+            Image(systemName: "magnifyingglass.circle")
                 .resizable()
                 .frame(width: 100, height: 100)
                 .scaleEffect(scale)
